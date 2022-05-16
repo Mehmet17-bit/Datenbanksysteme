@@ -1,0 +1,5 @@
+SELECT kunde.Name, kunde.Adresse, COUNT(auftragv1.AuftragID) AS Auftragliste, SUM(auftragv1.Anzahl_Sendungen) AS Anzahl_Pakete
+FROM kunde, auftragv1
+WHERE kunde.KundenNr = auftragv1.Empfaenger AND kunde.Name = 'Joshua Stahl'
+GROUP BY kunde.Name;
+-> Auftragliste des Kunden und Anzahl Pakete
